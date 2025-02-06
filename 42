@@ -1,7 +1,11 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <algorithm>
+
+
+
 using namespace std;
+
 
 struct Book {
     string title;
@@ -9,7 +13,7 @@ struct Book {
     string publisher;
     string genre;
 };
-
+//интерфейс
 void printBooks(const Book books[], int count) {
     for (int i = 0; i < count; ++i) {
         cout << "Книга " << i + 1 << ":\n";
@@ -19,7 +23,7 @@ void printBooks(const Book books[], int count) {
         cout << "Жанр: " << books[i].genre << "\n\n";
     }
 }
-
+//интерфейс
 void editBook(Book& book) {
     cout << "Введите новое название книги: ";
     getline(cin, book.title);
@@ -30,7 +34,7 @@ void editBook(Book& book) {
     cout << "Введите новый жанр книги: ";
     getline(cin, book.genre);
 }
-
+//выводит автора и его книги
 void searchByAuthor(const Book books[], int count, const string& author) {
     cout << "Книги автора " << author << ":\n";
     bool found = false;
@@ -44,7 +48,7 @@ void searchByAuthor(const Book books[], int count, const string& author) {
         cout << "Книги данного автора не найдены.\n";
     }
 }
-
+//книги по названию
 void searchByTitle(const Book books[], int count, const string& title) {
     cout << "Книги с названием " << title << ":\n";
     bool found = false;
